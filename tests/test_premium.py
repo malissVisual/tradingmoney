@@ -120,14 +120,18 @@ def test_ticket_open_and_close(bot: TradingBot, guild: FakeGuild, monkeypatch) -
 
 def test_buttons_are_persistent_and_work(bot: TradingBot, guild: FakeGuild) -> None:
     async def scenario() -> None:
-        for view in persistent_views("https://example.com/koupit"):
+        for view in persistent_views(bot.settings):
             bot.add_view(view)  # vyhodí ValueError, kdyby view nepřežil restart
 
-        pricing = PricingView("https://example.com/koupit")
-        assert [item.label for item in pricing.children] == ["Koupit Premium", "Aktivovat kód"]
+        pricing = PricingView("https://example.com/mesicni", "https://example.com/dozivotni")
+        assert [item.label for item in pricing.children] == ["Koupit měsíční", "Koupit doživotní", "Aktivovat kód"]
         interaction = make_interaction(bot, guild, guild.add_member())
-        await pricing.children[1].callback(interaction)
+        await pricing.children[-1].callback(interaction)
         assert isinstance(interaction.response.send_modal.await_args.args[0], RedeemModal)
+        assert [item.label for item in PricingView("https://example.com/x").children] == [
+            "Koupit Premium",
+            "Aktivovat kód",
+        ]
         assert [item.label for item in PricingView(None).children] == ["Aktivovat kód"]
 
         user = guild.add_member()

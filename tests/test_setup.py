@@ -2,9 +2,11 @@ import asyncio
 
 import discord
 
+from bot import server_setup
 from bot.client import TradingBot
 from bot.layout import CATEGORIES, CHANNELS_BY_KEY, MEMBER, MOD, PREMIUM, ROLES
 from bot.server_setup import plan_cleanup, setup_guild
+from bot.texts import Text, load_text
 from bot.views import PricingView, TicketPanelView, VerifyView
 
 from .conftest import FakeGuild
@@ -49,8 +51,11 @@ def test_setup_builds_whole_server(bot: TradingBot, guild: FakeGuild) -> None:
     pricing = next(iter(bot.lookup_channel(guild, "cenik").messages.values()))
     assert isinstance(pricing.view, PricingView)
     assert [item.url for item in pricing.view.children if getattr(item, "url", None)] == [
-        "https://example.com/koupit"
+        "https://example.com/mesicni",
+        "https://example.com/dozivotni",
     ]
+    assert "4 490 Kč" in pricing.embeds[0].description
+    assert "22 000 Kč" in pricing.embeds[0].description
     support = next(iter(bot.lookup_channel(guild, "podpora").messages.values()))
     assert isinstance(support.view, TicketPanelView)
 
@@ -60,9 +65,18 @@ def test_setup_builds_whole_server(bot: TradingBot, guild: FakeGuild) -> None:
     assert guild.explicit_content_filter == discord.ContentFilter.all_members
     assert guild.default_notifications == discord.NotificationLevel.only_mentions
 
-    # Ceny v šabloně ještě nejsou vyplněné – /setup na to upozorní.
-    assert any("cenik.md" in warning for warning in report.warnings)
+    assert report.warnings == []
     assert "Server je nastavený" in report.render()
+
+
+def test_setup_warns_about_unfilled_text(bot: TradingBot, guild: FakeGuild, monkeypatch) -> None:
+    def load_with_placeholder(key: str) -> Text:
+        text = load_text(key)
+        return Text(text.title, text.body + "\nCena: XXX Kč") if key == "cenik" else text
+
+    monkeypatch.setattr(server_setup, "load_text", load_with_placeholder)
+    report = run(setup_guild(bot, guild))
+    assert [w for w in report.warnings if "XXX" in w] == ["V textu texts/cenik.md jsou ještě nevyplněné hodnoty (XXX)."]
 
 
 def test_setup_is_idempotent(bot: TradingBot, guild: FakeGuild) -> None:

@@ -12,6 +12,7 @@ from .layout import MEMBER
 
 if TYPE_CHECKING:
     from .client import TradingBot
+    from .config import Settings
 
 log = logging.getLogger(__name__)
 
@@ -75,10 +76,13 @@ class RedeemModal(discord.ui.Modal, title="Aktivace Premium"):
 
 
 class PricingView(PersistentView):
-    def __init__(self, payment_url: str | None) -> None:
+    def __init__(self, monthly_url: str | None, lifetime_url: str | None = None) -> None:
         super().__init__()
-        if payment_url:
-            self.add_item(discord.ui.Button(label="Koupit Premium", emoji="🛒", url=payment_url))
+        if monthly_url and lifetime_url:
+            self.add_item(discord.ui.Button(label="Koupit měsíční", emoji="🛒", url=monthly_url))
+            self.add_item(discord.ui.Button(label="Koupit doživotní", emoji="💎", url=lifetime_url))
+        elif monthly_url or lifetime_url:
+            self.add_item(discord.ui.Button(label="Koupit Premium", emoji="🛒", url=monthly_url or lifetime_url))
         redeem = discord.ui.Button(
             label="Aktivovat kód", emoji="🔑", style=discord.ButtonStyle.primary, custom_id="tm:redeem"
         )
@@ -105,16 +109,17 @@ class TicketCloseView(PersistentView):
         await tickets.close_ticket(interaction)
 
 
-def panel_view(panel: str, payment_url: str | None) -> discord.ui.View | None:
+def panel_view(panel: str, settings: Settings) -> discord.ui.View | None:
     """Tlačítka, která patří pod daný panel (podle klíče textu)."""
     if panel == "vitej":
         return VerifyView()
     if panel == "cenik":
-        return PricingView(payment_url)
+        return PricingView(settings.payment_url, settings.payment_url_lifetime)
     if panel == "podpora":
         return TicketPanelView()
     return None
 
 
-def persistent_views(payment_url: str | None) -> list[discord.ui.View]:
-    return [VerifyView(), PricingView(payment_url), TicketPanelView(), TicketCloseView()]
+def persistent_views(settings: Settings) -> list[discord.ui.View]:
+    pricing = PricingView(settings.payment_url, settings.payment_url_lifetime)
+    return [VerifyView(), pricing, TicketPanelView(), TicketCloseView()]

@@ -36,7 +36,7 @@ class TradingBot(discord.Client):
         register_commands(self.tree)
 
     async def setup_hook(self) -> None:
-        for view in persistent_views(self.settings.payment_url):
+        for view in persistent_views(self.settings):
             self.add_view(view)
 
         if self.settings.guild_id:

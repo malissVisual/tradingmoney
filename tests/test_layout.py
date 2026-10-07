@@ -144,6 +144,7 @@ def test_settings() -> None:
     settings = load_settings(
         {"DISCORD_TOKEN": "abc", "GUILD_ID": "123", "PAYMENT_URL": "https://pay.example/x"}
     )
+    assert settings.payment_url_lifetime is None
     assert settings.guild_id == 123
     assert settings.payment_url == "https://pay.example/x"
     assert str(settings.database_path) == "data/bot.db"
@@ -153,3 +154,5 @@ def test_settings() -> None:
         load_settings({"DISCORD_TOKEN": "abc", "GUILD_ID": "server"})
     with pytest.raises(ConfigError):
         load_settings({"DISCORD_TOKEN": "abc", "PAYMENT_URL": "pay.example"})
+    with pytest.raises(ConfigError):
+        load_settings({"DISCORD_TOKEN": "abc", "PAYMENT_URL_LIFETIME": "pay.example"})

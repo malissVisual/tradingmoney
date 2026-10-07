@@ -1,7 +1,7 @@
 # 💰 Premium – moje obchodní strategie
 <!--
-  ✏️ Uprav ceny (XXX) a obsah podle sebe – dokud tu jsou XXX, /setup tě na to upozorní.
-  Odkaz na tlačítko „Koupit Premium“ se nastavuje v souboru .env jako PAYMENT_URL.
+  ✏️ Cenu a obsah uprav podle sebe. Nevyplněné hodnoty označ XXX – /setup tě na ně upozorní.
+  Odkazy na tlačítka „Koupit“ se nastavují v souboru .env (PAYMENT_URL a PAYMENT_URL_LIFETIME).
   Po úpravě spusť v Discordu znovu /setup.
 -->
 Obchoduju podle jasně daných pravidel a teď je můžeš mít i ty. Žádné „zaručené zisky“ – systém, disciplína a risk management.
@@ -14,11 +14,11 @@ Obchoduju podle jasně daných pravidel a teď je můžeš mít i ty. Žádné �
 🛟 přednostní podporu
 
 **Cena**
-• Měsíční přístup – **XXX Kč / 30 dní**
-• Doživotní přístup – **XXX Kč jednorázově**
+• Měsíční přístup – **4 490 Kč / 30 dní**
+• Doživotní přístup – **22 000 Kč jednorázově** (vyplatí se už od 5. měsíce)
 
 **Jak koupit**
-1️⃣ Klikni na **🛒 Koupit Premium**. Chceš platit převodem? Otevři tiket v {#podpora}.
+1️⃣ Klikni na tlačítko **Koupit** pod touto zprávou. Chceš platit převodem? Otevři tiket v {#podpora}.
 2️⃣ Po zaplacení dostaneš **aktivační kód**.
 3️⃣ Klikni na **🔑 Aktivovat kód** a vlož ho – Premium se ti odemkne okamžitě.
 

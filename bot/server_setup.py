@@ -129,9 +129,9 @@ async def setup_guild(bot: TradingBot, guild: discord.Guild) -> SetupReport:
             if channel_spec.panel:
                 await _ensure_panel(bot, guild, channel_spec, report)
 
-    if not bot.settings.payment_url:
+    if not (bot.settings.payment_url or bot.settings.payment_url_lifetime):
         report.warnings.append(
-            "Není nastavená PAYMENT_URL (odkaz na platbu) – v ceníku chybí tlačítko „Koupit Premium“."
+            "Není nastavená PAYMENT_URL (odkaz na platbu) – v ceníku chybí tlačítko „Koupit“."
         )
     return report
 
@@ -242,7 +242,7 @@ async def _ensure_panel(bot: TradingBot, guild: discord.Guild, spec: ChannelSpec
     embed = build_embed(bot, guild, spec.panel)
     if UNFILLED in (embed.description or ""):
         report.warnings.append(f"V textu texts/{spec.panel}.md jsou ještě nevyplněné hodnoty ({UNFILLED}).")
-    view = panel_view(spec.panel, bot.settings.payment_url)
+    view = panel_view(spec.panel, bot.settings)
 
     message: discord.Message | None = None
     stored = bot.db.get_panel(guild.id, spec.panel)

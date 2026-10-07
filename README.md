@@ -121,13 +121,13 @@ Texty jsou v adresáři [`texts/`](texts) (obyčejný text, první řádek je na
 | `vitej.md` | 👋┃vítej (s tlačítkem pro ověření) |
 | `pravidla.md` | 📜┃pravidla |
 | `riziko.md` | ⚠️┃upozornění-o-riziku |
-| `cenik.md` | 💰┃ceník (s tlačítky Koupit / Aktivovat kód) – **doplň ceny místo `XXX`** |
+| `cenik.md` | 💰┃ceník (s tlačítky Koupit / Aktivovat kód) – **4 490 Kč / měsíc**, **22 000 Kč doživotně** |
 | `faq.md` | ❓┃faq |
 | `podpora.md` | 🎫┃podpora (s tlačítkem pro tiket) |
 | `premium.md` | 📘┃strategie – uvítání v Premium |
 
-Po úpravě spusť znovu `/setup` – bot zprávy přepíše (nové neposílá). Dokud jsou v ceníku `XXX`,
-`/setup` tě na to upozorní. Zástupné značky: `{server}` = název serveru, `{#cenik}` = odkaz na kanál,
+Po úpravě spusť znovu `/setup` – bot zprávy přepíše (nové neposílá). Když v textu necháš `XXX`
+(nevyplněná hodnota), `/setup` tě na to upozorní. Zástupné značky: `{server}` = název serveru, `{#cenik}` = odkaz na kanál,
 `{@premium}` = zmínka role (klíče najdeš v [`bot/layout.py`](bot/layout.py)).
 
 Pak už jen do 📘┃strategie a 🎥┃webináře-a-záznamy nahraj svůj obsah.
@@ -136,12 +136,16 @@ Pak už jen do 📘┃strategie a 🎥┃webináře-a-záznamy nahraj svůj obsa
 
 ## 💸 Jak prodávat
 
-1. **Platba.** Vytvoř si platební odkaz a dej ho do `.env` jako `PAYMENT_URL` (pak restartuj bota a spusť `/setup`):
+1. **Platba.** Vytvoř si platební odkazy a dej je do `.env` – měsíční jako `PAYMENT_URL`, doživotní jako
+   `PAYMENT_URL_LIFETIME` (pak restartuj bota a spusť `/setup`). V ceníku se objeví tlačítka
+   **🛒 Koupit měsíční** a **💎 Koupit doživotní**. Kde vytvořit odkaz:
    - [Stripe Payment Links](https://stripe.com/payments/payment-links) – karty, Apple/Google Pay, nízké poplatky,
    - [Lemon Squeezy](https://www.lemonsqueezy.com) / [Gumroad](https://gumroad.com) – prodávají za tebe a řeší i
      DPH v EU, vyšší poplatek, ale nejméně starostí,
    - **převodem** – zákazník otevře tiket, pošleš mu číslo účtu.
-2. **Kód.** Po zaplacení vygeneruj kód: `/kody vytvorit dni:30 poznamka:Jan Novák` (`dni:0` = doživotně).
+2. **Kód.** Po zaplacení vygeneruj kód:
+   - měsíční (4 490 Kč): `/kody vytvorit dni:30 poznamka:Jan Novák`
+   - doživotní (22 000 Kč): `/kody vytvorit dni:0 poznamka:Jan Novák`
 3. **Předání.** Pošli kód zákazníkovi (e-mail, DM). Ten ho zadá tlačítkem **🔑 Aktivovat kód** v ceníku
    nebo příkazem `/aktivovat`. Hotovo – v mod-logu uvidíš, kdo co aktivoval.
 

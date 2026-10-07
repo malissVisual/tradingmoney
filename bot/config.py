@@ -20,6 +20,7 @@ class Settings:
     guild_id: int | None
     database_path: Path
     payment_url: str | None
+    payment_url_lifetime: str | None = None
 
 
 def load_settings(env: Mapping[str, str] | None = None) -> Settings:
@@ -40,13 +41,17 @@ def load_settings(env: Mapping[str, str] | None = None) -> Settings:
     except ValueError:
         raise ConfigError(f"GUILD_ID musí být číslo (ID serveru), ne {guild_raw!r}.") from None
 
-    payment_url = env.get("PAYMENT_URL", "").strip() or None
-    if payment_url and not payment_url.startswith(("https://", "http://")):
-        raise ConfigError("PAYMENT_URL musí být celý odkaz začínající https://")
-
     return Settings(
         token=token,
         guild_id=guild_id,
         database_path=Path(env.get("DATABASE_PATH", "").strip() or "data/bot.db"),
-        payment_url=payment_url,
+        payment_url=_url(env, "PAYMENT_URL"),
+        payment_url_lifetime=_url(env, "PAYMENT_URL_LIFETIME"),
     )
+
+
+def _url(env: Mapping[str, str], name: str) -> str | None:
+    url = env.get(name, "").strip() or None
+    if url and not url.startswith(("https://", "http://")):
+        raise ConfigError(f"{name} musí být celý odkaz začínající https://")
+    return url

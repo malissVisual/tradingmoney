@@ -235,7 +235,13 @@ def guild() -> FakeGuild:
 
 @pytest.fixture
 def bot(db: Database, guild: FakeGuild) -> TradingBot:
-    settings = Settings(token="test", guild_id=None, database_path=None, payment_url="https://example.com/koupit")
+    settings = Settings(
+        token="test",
+        guild_id=None,
+        database_path=None,
+        payment_url="https://example.com/mesicni",
+        payment_url_lifetime="https://example.com/dozivotni",
+    )
     client = TradingBot(settings, db)
     client.get_guild = lambda guild_id: guild if guild_id == guild.id else None  # type: ignore[method-assign]
     return client
