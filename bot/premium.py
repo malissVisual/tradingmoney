@@ -101,7 +101,7 @@ async def redeem(interaction: discord.Interaction, raw_code: str) -> None:
     premium_channel = bot.lookup_channel(guild, "navod")
     where = f" Začni v {premium_channel.mention}." if premium_channel else ""
     await interaction.response.send_message(
-        f"◆ **Jsi uvnitř.** Přístup do Kruhu platí {describe_expiry(subscription)}.{where}", ephemeral=True
+        f"◆ **Jsi v The Edge.** Přístup platí {describe_expiry(subscription)}.{where}", ephemeral=True
     )
     note = f" – {code.note}" if code.note else ""
     await bot.log(

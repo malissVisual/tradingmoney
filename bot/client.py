@@ -142,7 +142,7 @@ class TradingBot(discord.Client):
             where = f" Prodloužit ho můžeš tady: {pricing.jump_url}" if pricing else ""
             await _send_dm(
                 member,
-                f"◆ Tvůj přístup do Kruhu na serveru **{guild.name}** končí <t:{subscription.expires_at}:R>."
+                f"◆ Tvůj přístup do The Edge na serveru **{guild.name}** končí <t:{subscription.expires_at}:R>."
                 f" Když si včas aktivuješ nový kód, dny se přičtou a o nic nepřijdeš.{where}",
             )
 
@@ -167,7 +167,7 @@ class TradingBot(discord.Client):
             where = f" Obnovit ho můžeš tady: {pricing.jump_url}" if pricing else ""
             await _send_dm(
                 member,
-                f"Tvůj přístup do Kruhu na serveru **{guild.name}** skončil. Díky, že jsi byl/a s námi.{where}",
+                f"Tvůj přístup do The Edge na serveru **{guild.name}** skončil. Díky, že jsi byl/a s námi.{where}",
             )
 
 

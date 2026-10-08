@@ -1,10 +1,12 @@
-# Uzavřený kruh
+# The Edge
 <!--
   ✏️ Cenu a obsah uprav podle sebe. Nevyplněné hodnoty označ XXX – /setup tě na ně upozorní.
   Odkazy na tlačítka „Koupit“ se nastavují v souboru .env (PAYMENT_URL a PAYMENT_URL_LIFETIME).
   Slibuj jen to, co opravdu dodáš – důvěra se staví roky a ztrácí jednou zprávou.
   Po úpravě spusť v Discordu znovu /setup.
 -->
+Každý trader hledá edge. Výhodu, kterou ostatní nemají. Tohle je můj.
+
 Nehledám tisíce členů. Hledám pár lidí, kteří chtějí obchodovat s jasným plánem a nést za to odpovědnost.
 
 **Co je uvnitř**

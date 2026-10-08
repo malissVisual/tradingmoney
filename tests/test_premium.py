@@ -35,7 +35,7 @@ def test_redeem_code_gives_premium_and_member_roles(bot: TradingBot, guild: Fake
 
     assert bot.lookup_role(guild, PREMIUM) in user.roles
     assert bot.lookup_role(guild, MEMBER) in user.roles
-    assert "Jsi uvnitř" in reply(interaction)
+    assert "Jsi v The Edge" in reply(interaction)
     log = bot.lookup_channel(guild, "modlog")
     assert any(code in m.content for m in log.messages.values())
 

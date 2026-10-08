@@ -82,7 +82,7 @@ ROLES: tuple[RoleSpec, ...] = (
             "view_audit_log",
         ),
     ),
-    RoleSpec(PREMIUM, "◆ Kruh", 0xC9A227, hoist=True),
+    RoleSpec(PREMIUM, "◆ Edgy", 0xC9A227, hoist=True),
     RoleSpec(MEMBER, "◇ Člen", 0x8E9AAF),
 )
 
@@ -121,21 +121,21 @@ CATEGORIES: tuple[CategorySpec, ...] = (
                 "cenik",
                 "◆・přístup",
                 READ_ONLY,
-                topic="Co je v Uzavřeném kruhu, kolik stojí vstup a jak ho aktivovat.",
+                topic="Co je v The Edge, kolik stojí vstup a jak ho aktivovat.",
                 panel="cenik",
             ),
             ChannelSpec(
                 "vysledky",
-                "◆・výsledky",
+                "◆・proof",
                 READ_ONLY,
-                topic="Výsledky systému. Všechny, i ztrátové. Píše sem jen tým.",
+                topic="Důkazy. Všechny obchody systému, i ztrátové. Píše sem jen tým.",
                 panel="vysledky",
             ),
             ChannelSpec(
                 "recenze",
                 "◆・zkušenosti",
                 Access(view=PUBLIC, send=PREMIUM_ONLY),
-                topic="Zkušenosti členů Kruhu. Psát sem můžou jen oni.",
+                topic="Zkušenosti členů The Edge. Psát sem můžou jen oni.",
                 slowmode=300,
             ),
             ChannelSpec("faq", "◆・otázky-a-odpovědi", READ_ONLY, topic="Nejčastější otázky.", panel="faq"),
@@ -166,7 +166,7 @@ CATEGORIES: tuple[CategorySpec, ...] = (
     ),
     CategorySpec(
         "premium",
-        "◆ UZAVŘENÝ KRUH",
+        "◆ THE EDGE",
         PREMIUM_CHAT,
         (
             ChannelSpec(
@@ -189,7 +189,7 @@ CATEGORIES: tuple[CategorySpec, ...] = (
                 PREMIUM_CHAT,
                 topic="Tvoje obchody podle systému – vstup, SL, TP, výsledek v R.",
             ),
-            ChannelSpec("premiumchat", "◆・kruh", PREMIUM_CHAT, topic="Jen pro členy Kruhu."),
+            ChannelSpec("premiumchat", "◆・edge-chat", PREMIUM_CHAT, topic="Jen pro členy The Edge."),
             ChannelSpec("live", "◆ Live", PREMIUM_CHAT, voice=True),
         ),
     ),

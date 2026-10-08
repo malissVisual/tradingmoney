@@ -8,7 +8,7 @@
 
 **IV. Nevěř nikomu, kdo píše první.** Tým ti nikdy nenapíše jako první s nabídkou investice. Nikdy po tobě nebude chtít peníze mimo {#cenik}, heslo ani přístup k brokerskému účtu. Podezřelé zprávy nahlas v {#podpora}.
 
-**V. Co je v Kruhu, zůstává v Kruhu.** Sdílení nebo přeprodej systému, nápadů a záznamů = trvalé vyloučení bez nároku na vrácení peněz.
+**V. Co je v The Edge, zůstává v The Edge.** Sdílení nebo přeprodej systému, nápadů a záznamů = trvalé vyloučení bez nároku na vrácení peněz.
 
 **VI. Piš do správných kanálů,** česky nebo slovensky.
 

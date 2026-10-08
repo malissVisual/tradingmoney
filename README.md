@@ -1,11 +1,11 @@
-# 📈 Český trading Discord s prodejem strategie
+# ◆ EDGY – český trading Discord s prodejem strategie
 
 Discord bot, který ti **sám postaví celý server** a **prodává přístup k tvé strategii**:
 
 - jedním příkazem `/setup` vytvoří role, kategorie, kanály a oprávnění (všechno česky),
 - pošle do kanálů uvítání, pravidla, upozornění o riziku, ceník, FAQ a podporu,
 - nováček klikne na **✅ Souhlasím a vstupuji** → odemkne se mu komunita,
-- zákazník zaplatí → dostane **aktivační kód** → klikne na **🔑 Aktivovat kód** → okamžitě je v **◆ Uzavřeném kruhu** (Premium),
+- zákazník zaplatí → dostane **aktivační kód** → klikne na **🔑 Aktivovat kód** → okamžitě je v **◆ The Edge** (Premium),
 - 3 dny před koncem předplatného mu bot připomene prodloužení, po skončení mu Premium sebere,
 - **tikety** pro platby převodem a dotazy (soukromý kanál jen pro zákazníka a tým),
 - **mod-log** s přehledem nákupů, tiketů a nových členů.
@@ -17,15 +17,16 @@ Discord bot, který ti **sám postaví celý server** a **prodává přístup k 
 | Kategorie | Kanály | Kdo vidí / píše |
 |---|---|---|
 | ◇ VSTUP | ✦・vstup · ✦・kodex · ✦・riziko · ✦・oznámení | všichni čtou, píše jen tým |
-| ◇ SYSTÉM | ◆・přístup (ceník) · ◆・výsledky · ◆・zkušenosti · ◆・otázky-a-odpovědi | všichni čtou, zkušenosti píše jen Kruh |
-| ◇ KOMUNITA | ・chat · ・grafy · ・trhy-a-zprávy · ・mindset-a-risk · ・dotazy · ◇ Lounge | ◇ Člen a ◆ Kruh |
-| ◆ UZAVŘENÝ KRUH | ◆・systém · ◆・signály · ◆・záznamy (jen čtení) · ◆・deník-obchodů · ◆・kruh · ◆ Live | jen ◆ Kruh (platící) |
+| ◇ SYSTÉM | ◆・přístup (ceník) · ◆・proof (výsledky) · ◆・zkušenosti · ◆・otázky-a-odpovědi | všichni čtou, zkušenosti píšou jen Edgy |
+| ◇ KOMUNITA | ・chat · ・grafy · ・trhy-a-zprávy · ・mindset-a-risk · ・dotazy · ◇ Lounge | ◇ Člen a ◆ Edgy |
+| ◆ THE EDGE | ◆・systém · ◆・signály · ◆・záznamy (jen čtení) · ◆・deník-obchodů · ◆・edge-chat · ◆ Live | jen ◆ Edgy (platící) |
 | ◇ PODPORA | ・podpora (+ soukromé tikety) | všichni |
 | ◈ TÝM | ・mod-log · ・porada | jen tým |
 
-Role: **◈ Tým** › **◆ Kruh** (platící členové) › **◇ Člen**.
+Server se jmenuje **EDGY** (edge = výhoda tradera, edgy = drzý). Placená sekce je **◆ THE EDGE**.
+Role: **◈ Tým** › **◆ Edgy** (platící členové) › **◇ Člen**.
 
-Tón serveru je klidný a uzavřený, důvěru staví na transparentnosti: v ◆・výsledky se zveřejňují
+Tón serveru je sebevědomý a uzavřený, důvěru staví na transparentnosti: v ◆・proof se zveřejňují
 všechny obchody včetně ztrát (výsledky v R, tedy v násobcích rizika).
 
 ---
@@ -38,11 +39,11 @@ botům zakládat servery a token bota si může vygenerovat jen vlastník aplika
 ### Krok 1 – Založ server
 
 V aplikaci Discord klikni vlevo na **＋ (Přidat server)** → **Vytvořit vlastní** → **Pro mě a mé přátele**
-→ zadej název (např. *Trading CZ*) → **Vytvořit**. Víc nic nenastavuj, zbytek udělá bot.
+→ zadej název **EDGY** → **Vytvořit**. Víc nic nenastavuj, zbytek udělá bot.
 
 ### Krok 2 – Vytvoř bota
 
-1. Otevři <https://discord.com/developers/applications> → **New Application** → název (např. *Trading CZ Bot*) → **Create**.
+1. Otevři <https://discord.com/developers/applications> → **New Application** → název (např. *EDGY Bot*) → **Create**.
 2. Vlevo **Bot**:
    - **Reset Token** → **Copy** – tohle je `DISCORD_TOKEN` (nikomu ho neukazuj),
    - zapni **Server Members Intent** a ulož (**Save Changes**),
@@ -125,16 +126,16 @@ Texty jsou v adresáři [`texts/`](texts) (obyčejný text, první řádek je na
 | `pravidla.md` | ✦・kodex |
 | `riziko.md` | ✦・riziko |
 | `cenik.md` | ◆・přístup (s tlačítky Koupit / Aktivovat kód) – **4 490 Kč / měsíc**, **22 000 Kč doživotně** |
-| `vysledky.md` | ◆・výsledky – pod něj zveřejňuj každý obchod, i ztrátový |
+| `vysledky.md` | ◆・proof – pod něj zveřejňuj každý obchod, i ztrátový |
 | `faq.md` | ◆・otázky-a-odpovědi |
 | `podpora.md` | ・podpora (s tlačítkem pro tiket) |
-| `premium.md` | ◆・systém – uvítání v Uzavřeném kruhu |
+| `premium.md` | ◆・systém – uvítání v The Edge |
 
 Po úpravě spusť znovu `/setup` – bot zprávy přepíše (nové neposílá). Když v textu necháš `XXX`
 (nevyplněná hodnota), `/setup` tě na to upozorní. Zástupné značky: `{server}` = název serveru, `{#cenik}` = odkaz na kanál,
 `{@premium}` = zmínka role (klíče najdeš v [`bot/layout.py`](bot/layout.py)).
 
-Pak už jen do ◆・systém a ◆・záznamy nahraj svůj obsah a do ◆・výsledky své obchody.
+Pak už jen do ◆・systém a ◆・záznamy nahraj svůj obsah a do ◆・proof své obchody.
 
 ---
 
@@ -202,7 +203,7 @@ Než začneš prodávat ve větším, vyplatí se hodinová konzultace s právn�
 
 - **Příkazy se nezobrazují** – vyplň `GUILD_ID` v `.env` a restartuj bota; v Discordu stiskni `Ctrl+R`.
 - **„Zapni Server Members Intent“** – Developer Portal → Bot → Server Members Intent → Save.
-- **Bot nemůže přidat roli** – Nastavení serveru → Role → přetáhni roli bota nad ◆ Kruh a ◇ Člen.
+- **Bot nemůže přidat roli** – Nastavení serveru → Role → přetáhni roli bota nad ◆ Edgy a ◇ Člen.
 - **Discord odmítl token** – v Developer Portalu dej Reset Token a vlož nový do `.env`.
 
 ## 🔐 Bezpečnost

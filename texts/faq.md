@@ -1,5 +1,5 @@
 # Otázky a odpovědi
-**Jak se dostanu do Kruhu?**
+**Jak se dostanu do The Edge?**
 V {#cenik} zaplatíš, dostaneš aktivační kód a zadáš ho tlačítkem **Aktivovat kód**.
 
 **Kdy se mi přístup odemkne?**

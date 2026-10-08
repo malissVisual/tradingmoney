@@ -1,5 +1,7 @@
-# Výsledky
+# Proof
 <!-- Pod tuhle zprávu zveřejňuj každý obchod ze systému, i ztrátový. Je to nejsilnější důkaz, že nic neskrýváš. -->
+Žádné řeči. Důkazy.
+
 Tady zveřejňuju výsledky systému. Všechny. I ty špatné.
 
 Trader, který ukazuje jen zisky, něco skrývá.

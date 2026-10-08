@@ -1,13 +1,14 @@
-# Vítej v {server}.
+# Vítej v EDGY.
 <!-- Tenhle text bot pošle do kanálu vstup. Po úpravě spusť v Discordu znovu /setup. -->
-Tohle není další skupina, která slibuje rychlé zbohatnutí.
+Každý hledá edge. My jsme edgy.
 
+Tohle není další skupina, která slibuje rychlé zbohatnutí.
 Je to klidné místo pro lidi, kteří chtějí obchodovat podle pravidel. Trh se nedá obelstít. Dá se jen pochopit.
 
 **Co tě tu čeká**
 ◇ komunita traderů, kteří sdílí grafy, úvahy i chyby
 ◇ otevřeně zveřejněné výsledky, zisky i ztráty, v {#vysledky}
-◆ Uzavřený kruh: můj systém, obchodní nápady a záznamy
+◆ **The Edge**: můj systém, obchodní nápady a záznamy
 
 **Vstup**
 1. Přečti si {#pravidla} a {#riziko}.
