@@ -5,7 +5,7 @@ Discord bot, který ti **sám postaví celý server** a **prodává přístup k 
 - jedním příkazem `/setup` vytvoří role, kategorie, kanály a oprávnění (všechno česky),
 - pošle do kanálů uvítání, pravidla, upozornění o riziku, ceník, FAQ a podporu,
 - nováček klikne na **✅ Souhlasím a vstupuji** → odemkne se mu komunita,
-- zákazník zaplatí → dostane **aktivační kód** → klikne na **🔑 Aktivovat kód** → okamžitě má **💎 Premium**,
+- zákazník zaplatí → dostane **aktivační kód** → klikne na **🔑 Aktivovat kód** → okamžitě je v **◆ Uzavřeném kruhu** (Premium),
 - 3 dny před koncem předplatného mu bot připomene prodloužení, po skončení mu Premium sebere,
 - **tikety** pro platby převodem a dotazy (soukromý kanál jen pro zákazníka a tým),
 - **mod-log** s přehledem nákupů, tiketů a nových členů.
@@ -16,14 +16,17 @@ Discord bot, který ti **sám postaví celý server** a **prodává přístup k 
 
 | Kategorie | Kanály | Kdo vidí / píše |
 |---|---|---|
-| 📌 ZAČNI TADY | 👋┃vítej · 📜┃pravidla · ⚠️┃upozornění-o-riziku · 📢┃oznámení | všichni čtou, píše jen tým |
-| 💎 STRATEGIE | 💰┃ceník · ⭐┃recenze · ❓┃faq | všichni čtou, recenze píšou jen Premium |
-| 💬 KOMUNITA | 💬┃obecný-chat · 📈┃grafy-a-analýzy · 📰┃trhy-a-zprávy · 🧠┃psychologie-a-risk · 🙋┃otázky · 🔊 Lounge | ✅ Člen a 💎 Premium |
-| 🔒 PREMIUM | 📘┃strategie · 🎯┃signály · 🎥┃webináře-a-záznamy (jen čtení) · 📊┃moje-obchody · 💎┃premium-chat · 🔊 Live trading | jen 💎 Premium |
-| 🛟 PODPORA | 🎫┃podpora (+ soukromé tikety) | všichni |
-| 🛠️ TÝM | 📋┃mod-log · 🛠┃admin-chat | jen tým |
+| ◇ VSTUP | ✦・vstup · ✦・kodex · ✦・riziko · ✦・oznámení | všichni čtou, píše jen tým |
+| ◇ SYSTÉM | ◆・přístup (ceník) · ◆・výsledky · ◆・zkušenosti · ◆・otázky-a-odpovědi | všichni čtou, zkušenosti píše jen Kruh |
+| ◇ KOMUNITA | ・chat · ・grafy · ・trhy-a-zprávy · ・mindset-a-risk · ・dotazy · ◇ Lounge | ◇ Člen a ◆ Kruh |
+| ◆ UZAVŘENÝ KRUH | ◆・systém · ◆・signály · ◆・záznamy (jen čtení) · ◆・deník-obchodů · ◆・kruh · ◆ Live | jen ◆ Kruh (platící) |
+| ◇ PODPORA | ・podpora (+ soukromé tikety) | všichni |
+| ◈ TÝM | ・mod-log · ・porada | jen tým |
 
-Role: **🛡️ Moderátor** › **💎 Premium** › **✅ Člen**.
+Role: **◈ Tým** › **◆ Kruh** (platící členové) › **◇ Člen**.
+
+Tón serveru je klidný a uzavřený, důvěru staví na transparentnosti: v ◆・výsledky se zveřejňují
+všechny obchody včetně ztrát (výsledky v R, tedy v násobcích rizika).
 
 ---
 
@@ -118,19 +121,20 @@ Texty jsou v adresáři [`texts/`](texts) (obyčejný text, první řádek je na
 
 | Soubor | Kanál |
 |---|---|
-| `vitej.md` | 👋┃vítej (s tlačítkem pro ověření) |
-| `pravidla.md` | 📜┃pravidla |
-| `riziko.md` | ⚠️┃upozornění-o-riziku |
-| `cenik.md` | 💰┃ceník (s tlačítky Koupit / Aktivovat kód) – **4 490 Kč / měsíc**, **22 000 Kč doživotně** |
-| `faq.md` | ❓┃faq |
-| `podpora.md` | 🎫┃podpora (s tlačítkem pro tiket) |
-| `premium.md` | 📘┃strategie – uvítání v Premium |
+| `vitej.md` | ✦・vstup (s tlačítkem pro ověření) |
+| `pravidla.md` | ✦・kodex |
+| `riziko.md` | ✦・riziko |
+| `cenik.md` | ◆・přístup (s tlačítky Koupit / Aktivovat kód) – **4 490 Kč / měsíc**, **22 000 Kč doživotně** |
+| `vysledky.md` | ◆・výsledky – pod něj zveřejňuj každý obchod, i ztrátový |
+| `faq.md` | ◆・otázky-a-odpovědi |
+| `podpora.md` | ・podpora (s tlačítkem pro tiket) |
+| `premium.md` | ◆・systém – uvítání v Uzavřeném kruhu |
 
 Po úpravě spusť znovu `/setup` – bot zprávy přepíše (nové neposílá). Když v textu necháš `XXX`
 (nevyplněná hodnota), `/setup` tě na to upozorní. Zástupné značky: `{server}` = název serveru, `{#cenik}` = odkaz na kanál,
 `{@premium}` = zmínka role (klíče najdeš v [`bot/layout.py`](bot/layout.py)).
 
-Pak už jen do 📘┃strategie a 🎥┃webináře-a-záznamy nahraj svůj obsah.
+Pak už jen do ◆・systém a ◆・záznamy nahraj svůj obsah a do ◆・výsledky své obchody.
 
 ---
 
@@ -198,7 +202,7 @@ Než začneš prodávat ve větším, vyplatí se hodinová konzultace s právn�
 
 - **Příkazy se nezobrazují** – vyplň `GUILD_ID` v `.env` a restartuj bota; v Discordu stiskni `Ctrl+R`.
 - **„Zapni Server Members Intent“** – Developer Portal → Bot → Server Members Intent → Save.
-- **Bot nemůže přidat roli** – Nastavení serveru → Role → přetáhni roli bota nad 💎 Premium a ✅ Člen.
+- **Bot nemůže přidat roli** – Nastavení serveru → Role → přetáhni roli bota nad ◆ Kruh a ◇ Člen.
 - **Discord odmítl token** – v Developer Portalu dej Reset Token a vlož nový do `.env`.
 
 ## 🔐 Bezpečnost

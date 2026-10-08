@@ -58,7 +58,7 @@ class VerifyView(PersistentView):
             if (channel := bot.lookup_channel(interaction.guild, key)) is not None
         ]
         await interaction.response.send_message(
-            "🎉 Vítej v komunitě! Odemkly se ti nové kanály. Doporučuju začít tady: " + " · ".join(links),
+            "◇ Jsi uvnitř. Odemkly se ti nové kanály. Začni tady: " + " · ".join(links),
             ephemeral=True,
         )
 

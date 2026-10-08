@@ -1,15 +1,17 @@
-# 👋 Vítej na serveru {server}!
-<!-- Tenhle text bot pošle do kanálu #vítej. Po úpravě spusť v Discordu znovu /setup. -->
-Jsme česká komunita traderů, kteří obchodují podle jasných pravidel – ne podle pocitů.
+# Vítej v {server}.
+<!-- Tenhle text bot pošle do kanálu vstup. Po úpravě spusť v Discordu znovu /setup. -->
+Tohle není další skupina, která slibuje rychlé zbohatnutí.
 
-**Co tady najdeš**
-📈 komunitu traderů, sdílení grafů, analýz a zkušeností
-🧠 debaty o risk managementu a psychologii obchodování
-💎 Premium sekci s mojí obchodní strategií, obchodními nápady a záznamy webinářů
+Je to klidné místo pro lidi, kteří chtějí obchodovat podle pravidel. Trh se nedá obelstít. Dá se jen pochopit.
 
-**Jak začít**
-1️⃣ Přečti si {#pravidla} a {#riziko}.
-2️⃣ Klikni dole na **✅ Souhlasím a vstupuji** – odemkne se ti komunita.
-3️⃣ Mrkni do {#cenik}, co všechno obsahuje Premium.
+**Co tě tu čeká**
+◇ komunita traderů, kteří sdílí grafy, úvahy i chyby
+◇ otevřeně zveřejněné výsledky, zisky i ztráty, v {#vysledky}
+◆ Uzavřený kruh: můj systém, obchodní nápady a záznamy
 
-Kliknutím na tlačítko potvrzuješ, že ti je alespoň 18 let, souhlasíš s pravidly serveru a bereš na vědomí upozornění o riziku.
+**Vstup**
+1. Přečti si {#pravidla} a {#riziko}.
+2. Klikni na **Souhlasím a vstupuji**.
+3. Rozhlédni se. Nikam nespěchej.
+
+Kliknutím potvrzuješ, že ti je alespoň 18 let, přijímáš kodex serveru a bereš na vědomí upozornění o riziku.

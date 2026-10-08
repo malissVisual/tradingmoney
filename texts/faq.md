@@ -1,24 +1,24 @@
-# ❓ Často kladené otázky
-**Jak získám Premium?**
-Všechno najdeš v {#cenik} – zaplatíš, dostaneš aktivační kód a zadáš ho tlačítkem **🔑 Aktivovat kód**.
+# Otázky a odpovědi
+**Jak se dostanu do Kruhu?**
+V {#cenik} zaplatíš, dostaneš aktivační kód a zadáš ho tlačítkem **Aktivovat kód**.
 
-**Kdy se mi Premium odemkne?**
+**Kdy se mi přístup odemkne?**
 Hned po zadání kódu. Když ne, otevři tiket v {#podpora}.
 
 **Jak dlouho mi přístup platí?**
-Měsíční přístup platí 30 dní od aktivace. Kdy ti končí, zjistíš příkazem `/predplatne`. 3 dny před koncem ti přijde připomínka do soukromých zpráv.
+Měsíční 30 dní od aktivace, doživotní navždy. Kdy ti končí, zjistíš příkazem `/predplatne`. Tři dny předem ti přijde připomínka.
 
 **Jak přístup prodloužím?**
-Kup si nový kód a aktivuj ho – dny se přičtou ke zbývajícímu času, nic ti nepropadne.
+Aktivuj nový kód. Dny se přičtou ke zbývajícímu času, nic nepropadne.
+
+**Proč ukazuješ i ztráty?**
+Protože ztráty k obchodování patří. Kdo ukazuje jen zisky, něco skrývá. Všechno najdeš v {#vysledky}.
 
 **Garantuješ zisk?**
 Ne. Nikdo poctivý ti zisk zaručit nemůže. Přečti si {#riziko}.
 
 **Potřebuju zkušenosti?**
-Strategie je popsaná krok za krokem, ale základy (co je stop-loss, páka nebo spread) bys znát měl/a. S čímkoli ti pomůžeme v {#otazky}.
+Systém je popsaný krok za krokem, ale základy (co je stop-loss, páka nebo spread) bys znát měl/a. S čímkoli ti pomůžeme v {#otazky}.
 
-**Můžu strategii poslat kamarádovi?**
-Ne. Přístup je pro jednoho člověka a sdílení vede k banu. Ať si kamarád koupí vlastní 🙂
-
-**Napsal mi někdo do soukromých zpráv, že je admin, a nabízí investici.**
-To je podvod. Tým nikdy nepíše první a nikdy po tobě nechce peníze mimo {#cenik}. Nahlas to v {#podpora}.
+**Napsal mi někdo do soukromých zpráv, že je z týmu, a nabízí investici.**
+To je podvod. Tým nikdy nepíše první a nikdy nechce peníze mimo {#cenik}. Nahlas to v {#podpora}.

@@ -1,7 +1,7 @@
-# 🎫 Podpora
-Potřebuješ pomoct s platbou nebo aktivací kódu, nebo máš dotaz k Premium?
+# Podpora
+Potřebuješ pomoct s platbou nebo kódem, nebo se chceš na něco zeptat před vstupem?
 
-Klikni na **🎫 Otevřít tiket** – vytvoří se soukromý kanál, který vidíš jen ty a náš tým.
+Klikni na **Otevřít tiket**. Vytvoří se soukromý kanál, který vidíš jen ty a tým.
 
 • Jeden člověk = jeden otevřený tiket.
 • Odpovídáme obvykle do 24 hodin.

@@ -25,7 +25,7 @@ if TYPE_CHECKING:
     from .client import TradingBot
 
 REASON = "Nastavení serveru (/setup)"
-BRAND_COLOUR = discord.Colour(0xF1C40F)
+BRAND_COLOUR = discord.Colour(0xC9A227)
 
 # Výchozí kanály, které Discord vytvoří u nového serveru (anglicky i česky).
 DEFAULT_TEXT_CHANNELS = {"general", "obecné"}

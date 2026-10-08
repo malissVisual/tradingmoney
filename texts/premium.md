@@ -1,15 +1,15 @@
-# 💎 Vítej v Premium!
-<!-- Tahle zpráva bude první v kanálu #strategie. Svou strategii pak do kanálu postuj pod ni. -->
-Díky, že sis pořídil/a moji strategii. Tady je mapa Premium sekce:
+# Jsi uvnitř.
+<!-- Tahle zpráva bude první v kanálu systém. Svůj systém pak do kanálu postuj pod ni. -->
+Vítej v Uzavřeném kruhu. Tady je mapa:
 
-📘 {#navod} – tady najdeš kompletní strategii krok za krokem. Začni od nejstaršího příspěvku.
-🎯 {#signaly} – obchodní nápady v reálném čase
-🎥 {#webinare} – záznamy webinářů a rozbory obchodů
-📊 {#obchody} – sdílej své obchody podle strategie (vstup, SL, TP, výsledek)
-💎 {#premiumchat} – chat jen pro Premium členy
-🔊 **Live trading** – hlasový kanál pro společné obchodování
+◆ {#navod}: celý systém krok za krokem. Začni od nejstaršího příspěvku.
+◆ {#signaly}: obchodní nápady v reálném čase
+◆ {#webinare}: záznamy webinářů a rozbory obchodů
+◆ {#obchody}: tvůj deník, sdílej obchody podle systému (vstup, SL, TP, výsledek v R)
+◆ {#premiumchat}: rozhovory jen pro členy Kruhu
+◆ **Live**: hlasový kanál pro společné obchodování
 
 **Pár věcí navíc**
-• Obsah Premium je jen pro tebe. Sdílení nebo přeposílání dál = trvalý ban bez vrácení peněz.
-• Kdy ti Premium končí, zjistíš příkazem `/predplatne`. Tři dny předem ti přijde připomínka.
-• Nic z toho není investiční doporučení – za své obchody odpovídáš ty.
+• Co je v Kruhu, zůstává v Kruhu. Sdílení dál = trvalé vyloučení.
+• Kdy ti přístup končí, zjistíš příkazem `/predplatne`.
+• Nic z toho není investiční doporučení. Za své obchody odpovídáš ty.

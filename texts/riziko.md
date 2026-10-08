@@ -1,4 +1,4 @@
-# ⚠️ Upozornění o riziku
+# Upozornění o riziku
 <!-- Tenhle text nemaž – chrání tebe i členy. Úpravy ideálně konzultuj s právníkem. -->
 Obchodování na finančních trzích (akcie, forex, kryptoměny, CFD, futures, opce…) je **vysoce rizikové** a můžeš přijít o část nebo celý vložený kapitál. U pákových produktů, jako jsou CFD, přichází o peníze většina retailových účtů.
 
