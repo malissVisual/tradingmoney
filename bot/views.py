@@ -63,7 +63,7 @@ class VerifyView(PersistentView):
         )
 
 
-class RedeemModal(discord.ui.Modal, title="Aktivace Premium"):
+class RedeemModal(discord.ui.Modal, title="Aktivace přístupu"):
     code = discord.ui.TextInput(
         label="Aktivační kód",
         placeholder="TM-XXXX-XXXX-XXXX",
