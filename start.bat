@@ -2,6 +2,9 @@
 cd /d "%~dp0"
 title EDGY Bot
 
+if not exist "requirements.txt" goto notextracted
+if not exist "bot\__main__.py" goto notextracted
+
 rem Najdi Python: nejdriv spoustec "py" (python.org), jinak "python" (napr. Microsoft Store).
 set "PY="
 where py >nul 2>nul && set "PY=py -3"
@@ -44,6 +47,14 @@ echo  Nenasel jsem Python 3.11 nebo novejsi (bud chybi, nebo je moc stary).
 echo  Stahni ho z https://www.python.org/downloads/ a pri instalaci zaskrtni "Add python.exe to PATH".
 echo  Pak znovu spust start.bat.
 start "" https://www.python.org/downloads/
+pause
+exit /b 1
+
+:notextracted
+echo.
+echo  start.bat nevidi ostatni soubory bota.
+echo  Rozbal cely ZIP (pravym tlacitkem - Extrahovat vse) a spust start.bat
+echo  ve slozce, kde jsou i slozky "bot", "texts" a soubor "requirements.txt".
 pause
 exit /b 1
 
