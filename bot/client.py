@@ -34,22 +34,30 @@ class TradingBot(discord.Client):
         self.tree = app_commands.CommandTree(self)
         self.tree.error(self.handle_command_error)
         register_commands(self.tree)
+        self._synced_guilds: set[int] = set()
 
     async def setup_hook(self) -> None:
         for view in persistent_views(self.settings):
             self.add_view(view)
 
         if self.settings.guild_id:
-            guild = discord.Object(id=self.settings.guild_id)
-            self.tree.copy_global_to(guild=guild)
-            synced = await self.tree.sync(guild=guild)
-        else:
-            synced = await self.tree.sync()
-        log.info("Zaregistrováno %d příkazů", len(synced))
+            await self.sync_commands(discord.Object(id=self.settings.guild_id))
         self.subscription_loop.start()
+
+    async def sync_commands(self, guild: discord.abc.Snowflake) -> None:
+        """Zaregistruje příkazy přímo na serveru – objeví se hned, ne až za hodinu."""
+        if guild.id in self._synced_guilds:
+            return
+        self.tree.copy_global_to(guild=guild)
+        synced = await self.tree.sync(guild=guild)
+        self._synced_guilds.add(guild.id)
+        log.info("Zaregistrováno %d příkazů na serveru %s", len(synced), guild.id)
 
     async def on_ready(self) -> None:
         assert self.user is not None
+        if not self.settings.guild_id:
+            for guild in self.guilds:
+                await self.sync_commands(guild)
         log.info("Přihlášen jako %s (%s) na %d serverech", self.user, self.user.id, len(self.guilds))
 
     # --- Vyhledání rolí a kanálů z layout.py ------------------------------
@@ -89,6 +97,10 @@ class TradingBot(discord.Client):
                 log.warning("Nepodařilo se zapsat do mod-logu na %s", guild.name)
 
     # --- Události ---------------------------------------------------------
+
+    async def on_guild_join(self, guild: discord.Guild) -> None:
+        if not self.settings.guild_id:
+            await self.sync_commands(guild)
 
     async def on_member_join(self, member: discord.Member) -> None:
         subscription = self.db.get_subscription(member.guild.id, member.id)

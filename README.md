@@ -66,10 +66,17 @@ kanály, role a nastavovat oprávnění.)
 Bot musí běžet **nonstop** (kvůli tlačítkům a hlídání předplatného). Na vyzkoušení stačí tvůj počítač,
 na ostrý provoz doporučuju levný VPS (např. Hetzner, ~5 €/měsíc) s Dockerem.
 
-Nejdřív připrav konfiguraci – zkopíruj `.env.example` jako `.env` a vyplň `DISCORD_TOKEN`
-(a ideálně `GUILD_ID`, viz komentáře v souboru).
+**Windows – nejjednodušší cesta:**
 
-**Windows** (potřebuješ [Python 3.11+](https://www.python.org/downloads/) – při instalaci zaškrtni *Add to PATH*):
+1. Nainstaluj [Python](https://www.python.org/downloads/) (při instalaci zaškrtni *Add python.exe to PATH*).
+2. Stáhni projekt jako ZIP: na GitHubu **Code → Download ZIP**, a rozbal ho.
+3. Dvojklikni na **`start.bat`**. Napoprvé se otevře Poznámkový blok se souborem `.env` – za
+   `DISCORD_TOKEN=` vlož token bota, ulož (`Ctrl+S`) a Poznámkový blok zavři. Bot se spustí.
+4. Okno nech otevřené – když ho zavřeš, bot se vypne. Příště stačí zase dvojklik na `start.bat`.
+
+Ostatní způsoby – nejdřív zkopíruj `.env.example` jako `.env` a vyplň `DISCORD_TOKEN`.
+
+**Windows ručně** (potřebuješ [Python 3.11+](https://www.python.org/downloads/) – při instalaci zaškrtni *Add to PATH*):
 
 ```powershell
 git clone https://github.com/malissVisual/tradingmoney.git
@@ -201,7 +208,7 @@ Než začneš prodávat ve větším, vyplatí se hodinová konzultace s právn�
 
 ## 🧯 Řešení problémů
 
-- **Příkazy se nezobrazují** – vyplň `GUILD_ID` v `.env` a restartuj bota; v Discordu stiskni `Ctrl+R`.
+- **Příkazy se nezobrazují** – restartuj bota a v Discordu stiskni `Ctrl+R`.
 - **„Zapni Server Members Intent“** – Developer Portal → Bot → Server Members Intent → Save.
 - **Bot nemůže přidat roli** – Nastavení serveru → Role → přetáhni roli bota nad ◆ Edgy a ◇ Člen.
 - **Discord odmítl token** – v Developer Portalu dej Reset Token a vlož nový do `.env`.

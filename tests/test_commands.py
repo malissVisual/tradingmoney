@@ -47,3 +47,18 @@ def test_admin_creates_code_and_member_checks_status(bot: TradingBot, guild: Fak
     status = make_interaction(bot, guild, user)
     run(subscription_command.callback(status))
     assert "doživotně" in status.response.send_message.await_args.args[0]
+
+
+def test_commands_sync_to_each_server_once(bot: TradingBot, guild: FakeGuild, monkeypatch) -> None:
+    calls = []
+
+    async def fake_sync(*, guild=None):
+        calls.append(guild.id)
+        return []
+
+    monkeypatch.setattr(bot.tree, "sync", fake_sync)
+    run(bot.sync_commands(guild))
+    run(bot.sync_commands(guild))
+    run(bot.on_guild_join(guild))
+    assert calls == [guild.id]
+    assert {c.name for c in bot.tree.get_commands(guild=guild)} >= {"setup", "aktivovat"}
